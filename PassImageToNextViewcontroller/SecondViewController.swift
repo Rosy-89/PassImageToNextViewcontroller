@@ -13,19 +13,18 @@ class SecondViewController: UIViewController {
     
     @IBOutlet weak var secondUIImageView: UIImageView!
     
-    var selectedImage: UIImageView?
-    
+    var selectedIndex: Int?
+    var selectedIndexItem: Int?
+    let Images = ["Aeroplaneimage","AeroplaneImage2"]
+    let pickerData: [String] = ["Item1", "Item2", "Item3"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        secondUILabel.text = selectedImage?.description
-        print("\(secondUILabel.text)")
-        
+        //secondUILabel.text = String(selectedIndex!)
+        //secondUILabel.text = pickerData[selectedIndex!]
+        secondUILabel.text = pickerData[selectedIndexItem!]
+        secondUIImageView.image = UIImage(named: Images[selectedIndex!])
 
-        //secondUIImageView.image = UIImage(named: "Aeroplaneimage.jpeg")
     }
-    
-
-
 }
